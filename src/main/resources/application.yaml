@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: MailSenderResearch
+
+
+  mail:
+    host: smtp.mail.ru                  # Адрес SMTP-сервера Mail.ru
+    port: 465                           # Порт для SSL-подключения (альтернативный: 587 для STARTTLS)
+    username: mailsenderoleborn@mail.ru # Полный email-адрес аккаунта Mail.ru
+    password: сделайте свой    # Пароль от аккаунта или специальный пароль для приложений
+    protocol: smtps                     # Используемый протокол (smtps для SSL)
+
+    # Дополнительные свойства SMTP
+    properties:
+      mail:
+        # Настройки SMTP
+        smtp:
+          auth: true                    # Требуется ли аутентификация (true для Mail.ru)
+          starttls.enable: false       # Отключаем STARTTLS (не нужно для порта 465)
+          ssl:
+            enable: true                # Включаем SSL-шифрование
+            trust: smtp.mail.ru         # Доверенный сертификат сервера
+
+        # Дополнительные настройки
+        debug: false                    # Логирование SMTP-команд (для отладки)
